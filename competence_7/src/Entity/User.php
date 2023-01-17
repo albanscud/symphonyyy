@@ -42,7 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 150)]
     private ?string $city = null;
 
-    #[ORM\Column]
+    #[ORM\Column (options: ['default' => 'CURRENT_STAMP'])]
     private ?\DateTimeImmutable $created_at = null;
 
     public function getId(): ?int
