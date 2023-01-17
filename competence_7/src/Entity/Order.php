@@ -19,7 +19,7 @@ class Order
     #[ORM\Column(length: 20, unique: true)]
     private ?string $reference = null;
 
-    #[ORM\Column(options: ['default' => 'CURRENT_STAMP'])]
+    #[ORM\Column(type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
