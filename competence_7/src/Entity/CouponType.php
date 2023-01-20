@@ -24,6 +24,7 @@ class CouponType
     public function __construct()
     {
         $this->coupons = new ArrayCollection();
+        
     }
 
     public function getId(): ?int

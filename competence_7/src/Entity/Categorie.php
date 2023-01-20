@@ -34,6 +34,7 @@ class Categorie
     {
         $this->categories = new ArrayCollection();
         $this->products = new ArrayCollection();
+        
     }
 
     public function getId(): ?int

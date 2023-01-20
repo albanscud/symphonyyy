@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 trait SlugTrait{
 
-    #[ORM\Column (type: 'string', length: '255')]
+    #[ORM\Column (type: 'string', length: 255)]
     private $slug;
 
     public function getSlug(): ?string
