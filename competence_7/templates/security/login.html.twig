@@ -17,33 +17,29 @@
   
         <h1 class="mt-6 text-center text-3xl font-bold tracking-tight text-blue-600">Connectez vous</h1>
 
-        <div class="place-content-center justify-center py-5 items-center space-x-4">
-            <label for="inputEmail">Email :</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-            <label for="inputPassword">Mot de passe : </label>
+        <div class="grid grid-cols-1 gap-4 place-items-center">
+            <label class=" py-5 text-xl" for="inputEmail">Email :</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus class=" relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
+            <label class="py-5 text-xl" for="inputPassword">Mot de passe : </label>
             <input type="password" name="password" id="inputPassword"  autocomplete="current-password" required class="relative block w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900  sm:text-sm">
 
             <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
-            >
-
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
+                value="{{ csrf_token('authenticate') }}">
 
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
+                        <input type="checkbox" name="_remember_me"> Se souvenir de moi
                     </label>
                 </div>
-            #}
-
-            <button class="text-center bg-blue-500 rounded-md py-2 px-4 text-sm" type="submit">
-            Se connecter
-            </button>
-            <button href="{{ path('app_register') }}" class="text-center bg-violet-600 rounded-md py-2 px-4 text-sm" type="submit">
-            S'inscrire
-            </button>
+            
+            <div class="py-5">
+                <button class="text-center bg-blue-500 rounded-md py-2 px-4 text-sm" type="submit">
+                Se connecter
+                </button>
+                <button href="{{ path('app_register') }}" class="text-center bg-violet-600 rounded-md py-2 px-4 text-sm" type="submit">
+                S'inscrire
+                </button>
+            </div>
         </div>  
     </form>
 
