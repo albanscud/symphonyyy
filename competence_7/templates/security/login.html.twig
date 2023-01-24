@@ -16,8 +16,8 @@
         {% endif %}
   
         <h1 class=" text-center text-3xl font-bold  text-orange-400 underline py-6">Connectez vous</h1>
-
-        <div class="grid grid-cols-1 gap-4 place-items-center">
+    <div class="mx-auto sm:full-w sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-5 place-items-center">
             <label class=" py-5 text-xl" for="inputEmail">Email :</label>
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" autocomplete="email" required autofocus class=" relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
             <label class="py-5 text-xl" for="inputPassword">Mot de passe : </label>
@@ -26,21 +26,22 @@
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}">
 
-                <div class="checkbox mb-3">
+                <div>
                     <label>
                         <input type="checkbox" name="_remember_me"> Se souvenir de moi
                     </label>
                 </div>
             
             <div class="py-5">
-                <button class="text-center bg-blue-500 rounded-md py-2 px-4 text-sm" type="submit">
+                <button class="text-center bg-blue-500 rounded-md py-2 px-4 " type="submit">
                 Se connecter
                 </button>
-                <button href="{{ path('app_register') }}" class="text-center bg-violet-600 rounded-md py-2 px-4 text-sm" type="submit">
+                <button href="{{ path('app_register') }}" class="text-center bg-violet-600 rounded-md py-2 px-4 " type="submit">
                 S'inscrire
                 </button>
             </div>
         </div>  
+    </div>
     </form>
 
 {% endblock %}
