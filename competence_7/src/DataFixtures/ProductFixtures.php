@@ -26,8 +26,10 @@ class ProductFixtures extends Fixture
             $product->setStock($faker->numberBetween(0, 10));
 
             // on va chercher une reference de categories
-           // $category =$this->getReference('cat-'. rand(1, 8));
-           // $product->setCategorie($category);
+           $category =$this->getReference('cat-'. rand(1, 8));
+           $product->setCategorie($category);
+
+           $this->setReference('prod-'.$prod, $product);
            
             $manager->persist($product);
 
