@@ -13,6 +13,15 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        jwt_auth:
+             pattern: ^/auth
+             stateless: true
+             json_login:
+                 check_path: jwt_auth
+                 success_handler: lexik_jwt_authentication.handler.authentication_success
+                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                 
         main:
             lazy: true
             provider: app_user_provider
