@@ -3,11 +3,14 @@
 {% block title %}Infos cryptos{% endblock %}
 
 {% block body %}
-    <main class='container'>
-        <section class="grid">
-            <div class="grid-3">
+    <main class=''>
+        <section class="flex grid grid-3">
+            
                 <div class="text-xl"> Liste des produits de la categories {{ category.name }} </div>
-            </div>
+                
+                {% for product in category.products %}
+                    {{product.name}}
+                {% endfor %}
         </section>
     </main>
 {% endblock %}
