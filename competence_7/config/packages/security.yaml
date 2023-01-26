@@ -15,12 +15,17 @@ security:
             security: false
 
         jwt_auth:
-             pattern: ^/auth
-             stateless: true
-             json_login:
-                 check_path: jwt_auth
-                 success_handler: lexik_jwt_authentication.handler.authentication_success
-                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            pattern: ^/auth
+            stateless: true
+            json_login:
+                check_path: jwt_auth
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
                  
         main:
             lazy: true
@@ -42,6 +47,8 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/auth, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
