@@ -9,42 +9,45 @@
    
     <div class="grid grid-cols-1 gap-5 place-items-center ">
         <label class="text-xl" for="inputEmail">Email :</label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.email) }}
+        <div class="w-1/3 appearance-none  border border-gray-300 py-2 text-gray-900">
+        {{ form(registrationForm.email) }}
         </div>
 
         <label class="text-xl" for="inputPassword">Mot de passe : </label>
-        <div class="relative block  w-1/3  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
+        <div class="w-1/3  border border-gray-300 py-2 text-gray-900  ">
+        {{ form(registrationForm.plainPassword, {label: 'Password'}) }}
         </div>
         
-        <label class="text-xl" for="inputPassword">Nom : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.lastname) }}
+        <label class="text-xl" for="inputLastname">Nom : </label>
+        <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
+        {{ form(registrationForm.lastname) }}
         </div>
 
-        <label class="text-xl" for="inputPassword">Prenom : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        
-        {{ form_row(registrationForm.firstname) }}
+        <label class="text-xl" for="inputFirstname">Prenom : </label>
+        <div class="w-1/3 border border-gray-300  py-2 text-gray-900">
+        {{ form(registrationForm.firstname) }}
         </div>
-        <label class="text-xl" for="inputPassword">Adresse : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.adress) }}
+
+        <label class="text-xl" for="inputAdress">Adresse : </label>
+        <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
+        {{ form(registrationForm.adress) }}
         </div>
-        <label class="text-xl" for="inputPassword">Code postal : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.zipcode) }}
+
+        <label class="text-xl" for="inputZipcode">Code postal : </label>
+        <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
+        {{ form(registrationForm.zipcode) }}
         </div>
-        <label class="text-xl" for="inputPassword">Ville : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.city) }}
+
+        <label class="text-xl" for="inputCity">Ville : </label>
+        <div class="w-1/3  border border-gray-300 py-2 text-gray-900">
+        {{ form(registrationForm.city) }}
         </div>
-        <label class="text-xl" for="inputPassword">RGPD : </label>
-        <div class="relative block  w-1/3 appearance-none  border border-gray-300 px-3 py-2 text-gray-900   sm:text-sm">
-        {{ form_row(registrationForm.RGPDConsent) }}
+
+        <div class="flex">
+            <label class="text-xl " for="inputRgpd">Acceptez les conditions d'utilisations : </label>
+            <div class="px-3 mt-1">
+            {{ form(registrationForm.RGPDConsent) }}
+            </div>
         </div>
 
     
