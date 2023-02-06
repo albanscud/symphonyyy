@@ -7,21 +7,20 @@
         
             {% for category in categories %}
                 {% if category.parent == null %}
-                    <div class="py-16 sm:py-24 xl:mx-auto xl:max-w-7xl xl:px-8">
+                    <div class="py-24 grid grid-cols-1 gap-3 place-items-center">
                         <div class="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0 text-3xl text-orange-400 underline"> {{ category.name }} : </div>
                     </div>
                 {% else %}
                     <div class="">
-                        <div class="">
-                            <div class=" text-xl grid grid-cols-1 gap-3 place-items-center text-violet-800">
-                                <div class="pt-2">{{ category.name}} </div>
-                                <a href="{{ path('categories_list', {slug: category.slug}) }}" 
-                                class="py-2  px-4 bg-blue-500 text-white font-semibold rounded-lg mb-3"> Voir les produits </a>
-                            </div>
+                        <div class="py-5 grid grid-cols-1 gap-3 place-items-center text-black">
+                            <div class="pt-2 text-2xl">{{ category.name}} </div>
+                            <a href="{{ path('categories_list', {slug: category.slug}) }}" 
+                            class="py-2 text-xl px-4 bg-blue-500 text-white font-semibold rounded-lg mb-3"> Voir les informations sur la cryptomonnaie </a>
                         </div>
                     </div>
-                {% endif %}
+                  {% endif %}
             {% endfor %}
+              
   
 
 

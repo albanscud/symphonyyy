@@ -10,43 +10,43 @@
     <div class="grid grid-cols-1 gap-5 place-items-center ">
         <label class="text-xl" for="inputEmail">Email :</label>
         <div class="w-1/3 appearance-none  border border-gray-300 py-2 text-gray-900">
-        {{ form(registrationForm.email) }}
+        {{ form_row(registrationForm.email) }}
         </div>
 
         <label class="text-xl" for="inputPassword">Mot de passe : </label>
         <div class="w-1/3  border border-gray-300 py-2 text-gray-900  ">
-        {{ form(registrationForm.plainPassword, {label: 'Password'}) }}
+        {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
         </div>
         
         <label class="text-xl" for="inputLastname">Nom : </label>
         <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
-        {{ form(registrationForm.lastname) }}
+        {{ form_row(registrationForm.lastname) }}
         </div>
 
         <label class="text-xl" for="inputFirstname">Prenom : </label>
         <div class="w-1/3 border border-gray-300  py-2 text-gray-900">
-        {{ form(registrationForm.firstname) }}
+        {{ form_row(registrationForm.firstname) }}
         </div>
 
         <label class="text-xl" for="inputAdress">Adresse : </label>
         <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
-        {{ form(registrationForm.adress) }}
+        {{ form_row(registrationForm.adress) }}
         </div>
 
         <label class="text-xl" for="inputZipcode">Code postal : </label>
         <div class="w-1/3  border border-gray-300  py-2 text-gray-900">
-        {{ form(registrationForm.zipcode) }}
+        {{ form_row  (registrationForm.zipcode) }}
         </div>
 
         <label class="text-xl" for="inputCity">Ville : </label>
         <div class="w-1/3  border border-gray-300 py-2 text-gray-900">
-        {{ form(registrationForm.city) }}
+        {{ form_row (registrationForm.city) }}
         </div>
 
         <div class="flex">
             <label class="text-xl " for="inputRgpd">Acceptez les conditions d'utilisations : </label>
             <div class="px-3 mt-1">
-            {{ form(registrationForm.RGPDConsent) }}
+            {{ form_row(registrationForm.RGPDConsent) }}
             </div>
         </div>
 

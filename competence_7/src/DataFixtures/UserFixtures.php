@@ -26,7 +26,7 @@ class UserFixtures extends Fixture
         $admin ->setZipcode('75001');
         $admin ->setCity('Paris');
         $admin ->setPassword(
-            $this->passwordEncoder->hashPassword($admin,'admin')
+            $this->passwordEncoder->hashPassword($admin,'azerty')
         );
         $admin ->setRoles(['ROLE_ADMIN']);  
         

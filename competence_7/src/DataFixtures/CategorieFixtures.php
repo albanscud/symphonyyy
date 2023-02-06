@@ -15,18 +15,18 @@ class CategorieFixtures extends Fixture
     
     public function load(ObjectManager $manager): void
     {
-        $parent = $this->createCategory('Informatique', null, $manager);
+        $parent = $this->createCategory('Cryptomonnaies', null, $manager);
         
 
-        $this-> createCategory('Ordinateurs portables', $parent, $manager);
-        $this-> createCategory('Ecrans', $parent, $manager);
-        $this-> createCategory('Souris', $parent, $manager);
+        $this-> createCategory('Bitcoin', $parent, $manager);
+        $this-> createCategory('Ethereum', $parent, $manager);
+        $this-> createCategory('Solana', $parent, $manager);
 
-        $parent = $this->createCategory('Mode', null, $manager);
+       // $parent = $this->createCategory('Mode', null, $manager);
 
-        $this-> createCategory('Homme', $parent, $manager);
-        $this-> createCategory('Femme', $parent, $manager);
-        $this-> createCategory('Enfant', $parent, $manager);
+        $this-> createCategory('Cardano', $parent, $manager);
+        $this-> createCategory('Xrp', $parent, $manager);
+        $this-> createCategory('Dodge', $parent, $manager);
 
 
         $manager->flush();
