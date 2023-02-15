@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CryptosController!{% endblock %}
+
+{% block body %}
+   
+    {% for crypto in cryptos %} 
+
+        <img src="{{ vich_uploader_asset(crypto, 'imageFile') }}" alt="..."/>
+                    
+    {% endfor %}              
+
+    
+{% endblock %}

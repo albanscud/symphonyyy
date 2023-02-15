@@ -28,4 +28,6 @@ yarn-error.log
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
-###< lexik/jwt-authentication-bundle ###
+###< lexik/jwt-authentication-bundle #
+
+/public/uploads/cryptos

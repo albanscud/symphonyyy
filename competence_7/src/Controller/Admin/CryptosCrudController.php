@@ -2,21 +2,20 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Categorie;
-
+use App\Entity\Cryptos;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class CategorieCrudController extends AbstractCrudController
+class CryptosCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Categorie::class;
+        return Cryptos::class;
     }
 
+    
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -24,7 +23,6 @@ class CategorieCrudController extends AbstractCrudController
             TextField::new('imageName'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('file')->setBasePath('/uploads/cryptos/')->onlyOnIndex(),
-            SlugField::new('slug')->setTargetFieldName('name')->hideOnIndex(), 
         ];
     }
     

@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Categorie;
 use App\Entity\Coupon;
+use App\Entity\Cryptos;
 use App\Entity\Image;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -50,7 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-file-text', Categorie::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-file-text', Product::class);
-        yield MenuItem::linkToCrud('Images', 'fas fa-image', Image::class);
+        yield MenuItem::linkToCrud('Cryptos', 'fas fa-image', Cryptos::class);
         
     }
     

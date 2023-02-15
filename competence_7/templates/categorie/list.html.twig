@@ -11,7 +11,10 @@
                 {% for product in category.products %}
                     <div class="py-24 grid grid-cols-1 gap-3 place-items-center">
                         <div class="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0 text-3xl text-orange-400 underline">  {{product.name}} : </div>
-                        <div class="text-xl text-black"> Le prix actuel est d'environ {{product.price /100}} euros</div>
+                        <div class="text-xl text-black"> Le prix actuel est d'environ {{product.price /100}} euros </div>
+                        
+                        <img width="200" src="{{ asset('uploads/cryptos/solana.png') }}" alt="Ma super image">
+                       
                     </div>
 
                    <div class="py-10 mb-10 gap-3 h-full px-24">
@@ -20,6 +23,9 @@
                     
 
                 {% endfor %}
+               
+
+                
         </section>
     </main>
 {% endblock %}

@@ -43,8 +43,7 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Image::class, orphanRemoval: true)]
     private Collection $images;
 
-    #[ORM\OneToMany(mappedBy: 'products', targetEntity: OrderDetail::class)]
-    private Collection $orderDetails;
+    
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
@@ -52,7 +51,6 @@ class Product
     public function __construct()
     {
         $this->images = new ArrayCollection();
-        $this->orderDetails = new ArrayCollection();
         $this-> created_at = new \DateTimeImmutable();
     }
 
@@ -153,35 +151,10 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection<int, OrderDetail>
-     */
-    public function getOrderDetails(): Collection
-    {
-        return $this->orderDetails;
-    }
 
-    public function addOrderDetail(OrderDetail $orderDetail): self
-    {
-        if (!$this->orderDetails->contains($orderDetail)) {
-            $this->orderDetails->add($orderDetail);
-            $orderDetail->setProducts($this);
-        }
+    
 
-        return $this;
-    }
-
-    public function removeOrderDetail(OrderDetail $orderDetail): self
-    {
-        if ($this->orderDetails->removeElement($orderDetail)) {
-            // set the owning side to null (unless already changed)
-            if ($orderDetail->getProducts() === $this) {
-                $orderDetail->setProducts(null);
-            }
-        }
-
-        return $this;
-    }
+   
 
     public function getImage(): ?string
     {
