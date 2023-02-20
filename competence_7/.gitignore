@@ -31,3 +31,4 @@ yarn-error.log
 ###< lexik/jwt-authentication-bundle #
 
 /public/uploads/cryptos
+/public/img/uploads
