@@ -14,6 +14,7 @@
                         
                         {% if category.name == "Bitcoin" %}  
                         <img src="{{ asset('img/uploads/bitcoin.png') }}" alt="photo Bitcoin" width="200">
+                        
                         {% endif %} 
 
                          {% if category.name == "Ethereum" %}  
@@ -38,10 +39,34 @@
 
 
 
+                        <div>
+                            {% if category.name == "Bitcoin" %}
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/bitcoin/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
+
+                            {% if category.name == "Ethereum" %} 
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/ethereum/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
+
+                            {% if category.name == "Solana" %} 
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/solana/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
+
+                            {% if category.name == "Xrp" %}  
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/xrp/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
+
+                            {% if category.name == "Cardano" %}   ->
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/cardano/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
+
+                            {% if category.name == "Dodge" %} 
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/dogecoin/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            {% endif %} 
 
 
-                        <div class="text-3xl text-violet-600"> Le prix actuel est d'environ <a class="underline text-4xl">{{product.price /100}} </a> euros </div>
-
+                            <div class="text-3xl text-violet-600"> Le prix actuel est d'environ <a class="underline text-4xl">{{product.price /100}} </a> euros </div>
+                        </div>
                     </div>
                        
                     
