@@ -10,7 +10,7 @@
           </div>
           <!-- navbar gauche -->
           <div class="hidden md:flex items-center space-x-20">
-            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300">Mon compte</a>
+            <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href="/profil">Mon compte</a>
             <a class="py-4 px-2 text-orange-400 font-semibold hover:text-white transition duration-300" href ="/produit">Différentes cryptomonnaies</a>
             
           </div>
@@ -25,7 +25,7 @@
             
            
             {% if app.user %}
-                <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href="/profil">Mon profil</a>
+               
                 <a  class="py-2 px-2 font-medium text-orange-400 rounded hover:bg-orange-600 hover:text-white transition duration-300" href ="{{ path('app_logout') }}">Deconnexion</a>
              
             {% else %}
@@ -47,7 +47,7 @@
             stroke="currentColor"
           >
             <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
+          </svg>   v 
         </button>
         </div>
       </div>
@@ -59,11 +59,10 @@
         <li><a class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300" href="/profil">Mon profil</a></li>
         <li><a  class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300" href ="/produit">Différentes cryptomonnaies</a></li>
       {% if app.user %}
-        <li><a  class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300">Mon compte</a></li>
         <li><a  class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300" href ="{{ path('app_logout') }}">Deconnexion</a></li>
       {% else %}
         <li><a  class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300" href = "{{ path('app_login') }}">Se connecter</a></li>
-        <li><a  class="block text-sm px-2 py-4 text-orange-400 hover:bg-orange-600 transition duration-300" href = "{{ path('app_register') }}">S'inscrire</a></li>
+        <li><a  class="block text-sm px-2 py-4 text-orange-400 hobnlver:bg-orange-600 transition duration-300" href = "{{ path('app_register') }}">S'inscrire</a></li>
       {% endif %}
         </ul>
     </div>
