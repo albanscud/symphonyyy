@@ -14,7 +14,7 @@
                         
                         {% if category.name == "Bitcoin" %}  
                         <img src="{{ asset('img/uploads/bitcoin.png') }}" alt="photo Bitcoin" width="200">
-                        
+                        <a href="{{ category.payementLink}}"> Acheter Bitcoin </a>
                         {% endif %} 
 
                          {% if category.name == "Ethereum" %}  
@@ -41,7 +41,7 @@
 
                         <div>
                             {% if category.name == "Bitcoin" %}
-                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/bitcoin/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a>
+                            <a class="hover:underline text-xl text-blue-500 hover:text-blue-700" href="https://coinmarketcap.com/fr/currencies/bitcoin/">Prix en temps réel {{product.name}} lien vers -> "CoinMarketCap"</a> 
                             {% endif %} 
 
                             {% if category.name == "Ethereum" %} 

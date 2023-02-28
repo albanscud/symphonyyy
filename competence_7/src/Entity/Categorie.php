@@ -47,6 +47,12 @@ class Categorie
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $stripeId = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $payement_link = null;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
@@ -188,6 +194,30 @@ class Categorie
     public function getImageName(): ?string
     {
         return $this->imageName;
+    }
+
+    public function getStripeId(): ?string
+    {
+        return $this->stripeId;
+    }
+
+    public function setStripeId(string $stripeId): self
+    {
+        $this->stripeId = $stripeId;
+
+        return $this;
+    }
+
+    public function getPayementLink(): ?string
+    {
+        return $this->payement_link;
+    }
+
+    public function setPayementLink(string $payement_link): self
+    {
+        $this->payement_link = $payement_link;
+
+        return $this;
     }
 
 }
