@@ -22,7 +22,7 @@ class CategoriesController extends AbstractController
         $httpClient = HttpClient::create();
         $response = $httpClient->request('GET', 'http://api.coinlayer.com/live', [
             'query' => [
-                'access_key' => 'd730a7e853b07b963e932d922ca9c017',
+                'access_key' => '3ed072653ff48800fb64b03c3753dea9',
             ],
         ]);
 

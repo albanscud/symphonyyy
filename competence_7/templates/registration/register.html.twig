@@ -3,7 +3,7 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1 class=" text-center text-3xl font-bold  text-orange-400 py-6 underline">Inscription </h1>
+   {#  <h1 class=" text-center text-3xl font-bold  text-orange-400 py-6 underline">Inscription </h1>
     
     {{ form_start(registrationForm) }}
    
@@ -62,4 +62,73 @@
         </div>
     </div>
    
+{% endblock %}
+ #}
+
+ <h1 class="text-center text-3xl font-bold text-orange-400 py-6 underline">Inscription</h1>
+
+{{ form_start(registrationForm) }}
+
+<div class="grid grid-cols-1 gap-5 justify-center">
+
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputEmail">Email :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.email) }}
+    </div>
+  </fieldset>
+
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputPassword">Mot de passe :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+    </div>
+  </fieldset>
+
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputLastname">Nom :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.lastname) }}
+    </div>
+  </fieldset>
+
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputFirstname">Prenom :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.firstname) }}
+    </div>
+  </fieldset>
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputAdress">Adresse :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.adress) }}
+    </div>
+  </fieldset>
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputZipcode">Code postal :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.zipcode) }}
+    </div>
+  </fieldset>
+  <fieldset class="w-full max-w-lg">
+    <label class="block text-gray-700 text-xl font-bold mb-2" for="inputCity">Ville :</label>
+    <div class="w-full appearance-none border border-gray-300 py-2 px-3 text-gray-900 leading-tight">
+      {{ form_row(registrationForm.city) }}
+    </div>
+  </fieldset>
+  <fieldset class="w-full max-w-lg">
+    <div class="flex items-center">
+      {{ form_row(registrationForm.RGPDConsent, {label: 'Acceptez les conditions d\'utilisations :', label_attr: {'class': 'text-xl font-bold mr-3'}}) }}
+    </div>
+  </fieldset>
+  <div class="flex justify-center mt-8">
+    <button type="submit" class="w-full sm:w-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Inscription
+    </button>
+    <button href="{{ path('app_login') }}" class="w-full sm:w-auto bg-violet-600 hover:bg-violet-800 text-white font-bold py-2 px-4 rounded ml-4">
+      Se connecter
+    </button>
+  </div>
+</div>
+{{ form_end(registrationForm) }}
 {% endblock %}
