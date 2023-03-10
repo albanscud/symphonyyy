@@ -3,7 +3,48 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+ <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Solana",
+      "proName": "BITSTAMP:SOLUSD"
+    },
+    {
+      "description": "Dodge",
+      "proName": "BINANCE:DOGEUSDT"
+    },
+    {
+      "description": "XRP",
+      "proName": "BINANCE:XRPUSDT"
+    },
+    {
+      "description": "ADA",
+      "proName": "BITFINEX:ADAUSD"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "fr"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->            
 
+    
 <div class="relative bg-white">
             <div class="lg:absolute lg:inset-0">
               <div class="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
