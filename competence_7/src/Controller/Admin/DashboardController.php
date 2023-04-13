@@ -3,9 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Categorie;
-use App\Entity\Coupon;
 use App\Entity\Cryptos;
-use App\Entity\Image;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -14,45 +12,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 
-class DashboardController extends AbstractDashboardController
+class DashboardController extends AbstractDashboardController // Définition de la classe DashboardController qui étend la classe AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
-    public function index(): Response
+    #[Route('/admin', name: 'admin')] // Définition de la route /admin et du nom 'admin'
+    public function index(): Response // Définition de la méthode index qui retourne un objet Response
     {
-        // return parent::index();
-
-        // Option 1. You can make your dashboard redirect to some common page of your backend
-        //
-        // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        // return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());
-
-        // Option 2. You can make your dashboard redirect to different pages depending on the user
-        //
-        // if ('jane' === $this->getUser()->getUsername()) {
-        //     return $this->redirect('...');
-        // }
-
-        // Option 3. You can render some custom template to display a proper dashboard with widgets, etc.
-        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
-        //
-        return $this->render('admin/index.html.twig');
+        return $this->render('admin/index.html.twig'); // Renvoi de la vue Twig 'admin/index.html.twig'
     }
 
-    public function configureDashboard(): Dashboard
+    public function configureDashboard(): Dashboard // Définition de la méthode configureDashboard qui retourne un objet Dashboard
     {
-        return Dashboard::new()
+        return Dashboard::new() // Création d'un objet Dashboard avec le titre 'Competence 7'
             ->setTitle('Competence 7');
     }
 
-    public function configureMenuItems(): iterable
+    public function configureMenuItems(): iterable // Définition de la méthode configureMenuItems qui retourne un iterable de MenuItem
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-file-text', Categorie::class);
-        yield MenuItem::linkToCrud('Produits', 'fas fa-file-text', Product::class);
-        yield MenuItem::linkToCrud('Cryptos', 'fas fa-image', Cryptos::class);
-        
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home'); // Ajout d'un lien vers le dashboard avec une icône de maison
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class); // Ajout d'un lien vers la liste des utilisateurs avec une icône de personne
+        yield MenuItem::linkToCrud('Categories', 'fas fa-file-text', Categorie::class); // Ajout d'un lien vers la liste des catégories avec une icône de texte
+        yield MenuItem::linkToCrud('Produits', 'fas fa-file-text', Product::class); // Ajout d'un lien vers la liste des produits avec une icône de texte
+        yield MenuItem::linkToCrud('Cryptos', 'fas fa-image', Cryptos::class); // Ajout d'un lien vers la liste des cryptos avec une icône d'image
     }
-    
 }
